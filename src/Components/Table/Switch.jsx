@@ -25,7 +25,6 @@ export default function SwitchLabels(props) {
                 label= {state.checkedA ? 'Turn OFF Filter' : 'Turn ON Filter'}
                 
             />
-            {console.log(props.turn)}
         </FormGroup>
     );
 }

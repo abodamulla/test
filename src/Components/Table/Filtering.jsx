@@ -79,7 +79,7 @@ function Filtering() {
                         labelId="eventDate"
                         id="EventDate"
                         name="EventDateFrom"
-                        value={filter.EventDateFrom}
+                        value={EventDateFrom}
                         onChange={handleChange}
                     >
                         <MenuItem value='10'>10</MenuItem>
@@ -96,7 +96,7 @@ function Filtering() {
                         labelId="eventDate"
                         id="EventDate"
                         name="EventDateTo"
-                        value={filter.EventDateTo}
+                        value={EventDateTo}
                         onChange={handleChange}
                     >
                         <MenuItem value='10'>10</MenuItem>
@@ -113,7 +113,7 @@ function Filtering() {
                         labelId="brand"
                         id="Brand"
                         name="Brand"
-                        value={filter.Brand}
+                        value={Brand}
                         onChange={handleChange}
                     >
                         {
@@ -132,7 +132,7 @@ function Filtering() {
                         labelId="city"
                         id="City"
                         name="City"
-                        value={filter.City}
+                        value={City}
                         onChange={handleChange}
                     >
                         {
@@ -151,7 +151,7 @@ function Filtering() {
                         labelId="typeOfJob"
                         id="TypeOfJob"
                         name="TypeOfJob"
-                        value={filter.TypeOfJob}
+                        value={TypeOfJob}
                         onChange={handleChange}
                     >
                         {
@@ -170,7 +170,7 @@ function Filtering() {
                         labelId="status"
                         id="Status"
                         name="Status"
-                        value={filter.Status}
+                        value={Status}
                         onChange={handleChange}
                     >
                         {

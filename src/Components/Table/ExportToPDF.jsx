@@ -6,8 +6,6 @@ import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf'
 import jsPDF from 'jspdf'
 import autoTable from 'jspdf-autotable'
 
-import rows, { headers } from './TableData'
-
 const useStyles = makeStyles(() => ({
     btn: {
         marginLeft: 10
@@ -23,7 +21,7 @@ const jsPDFGenerator = () => {
         unit: "mm",
         format: [210, 297]
     })
-    doc.autoTable({ html: '#MyyTable' })
+    autoTable(doc, { html: '#MyyTable' })
     doc.save("Data.pdf")
 }
 function ExportToPDF() {
