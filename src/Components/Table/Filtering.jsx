@@ -7,7 +7,7 @@ import {
     Grid,
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
-import SwitchLabels from './Switch';
+// import SwitchLabels from './Switch';
 
 import ExportToCSV from './ExportToCSV';
 import ExportToPDF from './ExportToPDF';
@@ -37,8 +37,7 @@ function Filtering() {
     });
     const { EventDateFrom, EventDateTo, Brand, City, TypeOfJob, Status } = filter
 
-    const [turn, setTurn] = useState(false)
-    setTurn(false)
+    // const [turn, setTurn] = useState(false)
 
     const handleChange = (event) => {
         const { name, value } = event.target
@@ -49,25 +48,25 @@ function Filtering() {
     };
 
     
-    const brandArray     = []
-    const cityArray      = []
-    const typeOfJobArray = []
-    const statusArray    = []
+        const brandArray     = []
+        const cityArray      = []
+        const typeOfJobArray = []
+        const statusArray    = []
 
-    rows.map(row => {
-        if(brandArray.indexOf(row.brand) === -1) {
-            brandArray.push(row.brand);
-        }
-        if(cityArray.indexOf(row.city) === -1) {
-            cityArray.push(row.city);
-        }
-        if(typeOfJobArray.indexOf(row.typeOfJob) === -1) {
-            typeOfJobArray.push(row.typeOfJob);
-        }
-        if(statusArray.indexOf(row.status) === -1) {
-            statusArray.push(row.status);
-        }
-    })
+        rows.forEach(row => {
+            if(brandArray.indexOf(row.brand) === -1) {
+                brandArray.push(row.brand);
+            }
+            if(cityArray.indexOf(row.city) === -1) {
+                cityArray.push(row.city);
+            }
+            if(typeOfJobArray.indexOf(row.typeOfJob) === -1) {
+                typeOfJobArray.push(row.typeOfJob);
+            }
+            if(statusArray.indexOf(row.status) === -1) {
+                statusArray.push(row.status);
+            }
+        })
 
     return (
         <Grid container spacing={2}>
@@ -118,7 +117,7 @@ function Filtering() {
                     >
                         {
                             brandArray.map(brand => (
-                                <MenuItem value={brand}>{brand}</MenuItem>
+                                <MenuItem key={brand} value={brand}>{brand}</MenuItem>
                             ))
                         }
                     </Select>
@@ -137,7 +136,7 @@ function Filtering() {
                     >
                         {
                             cityArray.map(city => (
-                                <MenuItem value={city}>{city}</MenuItem>
+                                <MenuItem key={city} value={city}>{city}</MenuItem>
                             ))
                         }
                     </Select>
@@ -156,7 +155,7 @@ function Filtering() {
                     >
                         {
                             typeOfJobArray.map(type => (
-                                <MenuItem value={type}>{type}</MenuItem>
+                                <MenuItem key={type} value={type}>{type}</MenuItem>
                             ))
                         }
                     </Select>
@@ -175,7 +174,7 @@ function Filtering() {
                     >
                         {
                             statusArray.map(status => (
-                                <MenuItem value={status}>{status}</MenuItem>
+                                <MenuItem key={status} value={status}>{status}</MenuItem>
                             ))
                         }
                     </Select>
@@ -185,7 +184,7 @@ function Filtering() {
             {/* BTN  */}
             <Grid container spacing={3} item lg={12} md={12} sm={12} xs={12}>
                 <Grid item lg={10} md={8} sm={8} xs={12}>
-                    <SwitchLabels turn={turn} />
+                    {/* <SwitchLabels turn={turn} /> */}
                 </Grid>
                 <Grid item lg={1} md={2} sm={2} xs={6}>
                     <ExportToCSV />
