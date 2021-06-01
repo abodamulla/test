@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.app {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+@media (min-width: 1000px) {
+  .app {
+    padding: 25px 100px;
+  }
+}
+/*# sourceMappingURL=Style.css.map */

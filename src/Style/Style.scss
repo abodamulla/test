@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.app {
+    transition: all .5s;
+    @media (min-width: 1000px) {
+        padding: 25px 100px;
+    }
+}
