@@ -38,6 +38,7 @@ function Filtering() {
     const { EventDateFrom, EventDateTo, Brand, City, TypeOfJob, Status } = filter
 
     const [turn, setTurn] = useState(false)
+    setTurn(false)
 
     const handleChange = (event) => {
         const { name, value } = event.target
@@ -48,26 +49,25 @@ function Filtering() {
     };
 
     
-        const brandArray     = []
-        const cityArray      = []
-        const typeOfJobArray = []
-        const statusArray    = []
-    {
-        rows.map(row => {
-            if(brandArray.indexOf(row.brand) === -1) {
-                brandArray.push(row.brand);
-            }
-            if(cityArray.indexOf(row.city) === -1) {
-                cityArray.push(row.city);
-            }
-            if(typeOfJobArray.indexOf(row.typeOfJob) === -1) {
-                typeOfJobArray.push(row.typeOfJob);
-            }
-            if(statusArray.indexOf(row.status) === -1) {
-                statusArray.push(row.status);
-            }
-        })
-    }
+    const brandArray     = []
+    const cityArray      = []
+    const typeOfJobArray = []
+    const statusArray    = []
+
+    rows.map(row => {
+        if(brandArray.indexOf(row.brand) === -1) {
+            brandArray.push(row.brand);
+        }
+        if(cityArray.indexOf(row.city) === -1) {
+            cityArray.push(row.city);
+        }
+        if(typeOfJobArray.indexOf(row.typeOfJob) === -1) {
+            typeOfJobArray.push(row.typeOfJob);
+        }
+        if(statusArray.indexOf(row.status) === -1) {
+            statusArray.push(row.status);
+        }
+    })
 
     return (
         <Grid container spacing={2}>
