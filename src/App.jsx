@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Form from './Components/Form/Form'
-import Page from './Components/Table/Page'
+import LastPage from './Components/Table/LastTable'
 
 // import {} from '@material-ui/core'
 // import {} from '@material-ui/icons'
@@ -12,7 +12,7 @@ function App() {
         <div className="app">
             <Router>
                 <Switch>
-                    <Route exact path="/"     component={Page} />
+                    <Route exact path="/"     component={LastPage} />
                     <Route       path="/Edit" component={Form} />
                 </Switch>
             </Router>

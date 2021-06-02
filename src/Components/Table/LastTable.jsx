@@ -1,17 +1,56 @@
 import React, { useState } from 'react'
+
+// Main Part
+import { 
+    Grid,
+    Typography,
+} from '@material-ui/core'
+
+import { makeStyles } from '@material-ui/core/styles'
+
+// Accrodion Part
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+} from '@material-ui/core';
+
+// Filtering Part
 import { 
     FormControl, 
     InputLabel, 
     Select, 
     MenuItem, 
-    Grid,
 } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles';
-
 import ExportToCSV from './Part/ExportToCSV';
 import ExportToPDF from './Part/ExportToPDF';
 
+// Icons Part
+import FilterListIcon from '@material-ui/icons/FilterList';
+
+// Other Part
+import MyTable from './Part/Table'
+import rows from './Part/TableData';
+
+var newRows = []
+
 const useStyles = makeStyles((theme) => ({
+    Page: {
+        padding: 1,
+    },
+    heading: {
+        fontSize: theme.typography.pxToRem(15),
+        flexBasis: '33.33%',
+        flexShrink: 0,
+        cursor: 'default',
+    },
+    secondaryHeading: {
+        fontSize: theme.typography.pxToRem(15),
+        color: theme.palette.text.secondary,
+    },
+    filterIcon: {
+        transform: "rotate(180deg)",
+    },
     formControl: {
         margin: theme.spacing(1),
         minWidth: 150,
@@ -20,10 +59,11 @@ const useStyles = makeStyles((theme) => ({
     filterBtn: {
         marginBottom: 10,
     },
-}));
+}))
 
-function Filtering(props) {
-    const classes = useStyles();
+
+function LastTable() {
+    const classes = useStyles()
 
     const [filter, setFilter] = useState({
         EventDateFrom : '',
@@ -34,7 +74,7 @@ function Filtering(props) {
         Status        : '',
     });
     const { EventDateFrom, EventDateTo, Brand, City, TypeOfJob, Status } = filter
-
+    
     const handleChange = (event) => {
         const { name, value } = event.target
         newRows = []
@@ -43,7 +83,7 @@ function Filtering(props) {
             [name]: value
         });
     };
-
+    
     
         const brandArray       = []
         const cityArray        = []
@@ -62,7 +102,7 @@ function Filtering(props) {
             }
             
         })
-
+    
         rows.forEach(row => {
             if(brandArray.indexOf(row.brand) === -1) {
                 brandArray.push(row.brand);
@@ -77,9 +117,21 @@ function Filtering(props) {
                 statusArray.push(row.status);
             }
         })
-    
+
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className={`${classes.Page}`}>
+
+            {/* Accordion Section */}
+            <Grid container item lg={12} md={12} sm={12} xs={12}>
+                <Accordion expanded={true}>
+                    <AccordionSummary
+                        expandIcon={<FilterListIcon className={`${classes.filterIcon}`} />}
+                        id="panel1bh-header"
+                    >
+                        <Typography className={classes.heading}>Filter</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                    <Grid container spacing={2}>
             <Grid item lg={2} md={4} sm={4} xs={6}>
                 <FormControl className={classes.formControl}>
                     <InputLabel id="eventDate">Event Date From</InputLabel>
@@ -208,6 +260,17 @@ function Filtering(props) {
             </Grid>
 
         </Grid>
+                    </AccordionDetails>
+                </Accordion>
+            </Grid >
+
+            {/* Table Section */}
+            <Grid container item lg={12} md={12} sm={12} xs={12}>
+                <MyTable newRows={newRows} />
+            </Grid >
+
+        </Grid>
     )
 }
-export default Filtering;
+
+export default LastTable

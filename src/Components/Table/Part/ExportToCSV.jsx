@@ -6,9 +6,6 @@ import rows, { headers } from './TableData'
 import { CSVLink } from 'react-csv';
 
 const useStyles = makeStyles(() => ({
-    btn: {
-        marginRight: 10
-    },
     icon: {
         marginRight: 10,
     },
@@ -35,6 +32,7 @@ function ExportToCSV() {
                 color='primary'
                 variant='contained'
                 className={`${classes.btn}`}
+                fullWidth
             >
                 <GetAppIcon
                     className={`${classes.icon}`}

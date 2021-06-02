@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function ControlledAccordions() {
+export default function ControlledAccordions(props) {
     const classes = useStyles();
 
     return (
@@ -43,7 +43,6 @@ export default function ControlledAccordions() {
                     <Filtering />
                 </AccordionDetails>
             </Accordion>
-            
         </div>
     );
 }

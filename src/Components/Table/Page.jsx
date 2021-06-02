@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import MyTable from './Table';
+import MyTable from './Part/Table';
 import ControlledAccordions from './Accrodion';
 
 const useStyles = makeStyles({
@@ -12,7 +12,6 @@ const useStyles = makeStyles({
 });
 function Page() {
     const classes = useStyles()
-
     return (
         <Grid container spacing={2} className={`${classes.Page}`}>
             <Grid container item lg={12} md={12} sm={12} xs={12}>

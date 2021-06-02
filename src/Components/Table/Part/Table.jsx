@@ -19,8 +19,6 @@ import {
     Edit,
 } from '@material-ui/icons'
 
-import rows from './TableData';
-
 const StyledTableCell = withStyles((theme) => ({
     head: {
         backgroundColor: theme.palette.common.black,
@@ -46,7 +44,8 @@ const useStyles = makeStyles({
     },
 });
 
-function MyTable() {
+
+function MyTable(props) {
     const classes = useStyles()
 
     const statusType = (type) => {
@@ -80,8 +79,8 @@ function MyTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
-                        <StyledTableRow key={row.id}>
+                    {props.newRows.map((row) => (
+                        <StyledTableRow key={row.id} id={row.id}>
                             <StyledTableCell component="th" scope="row">{row.eventTime}</StyledTableCell>
                             <StyledTableCell align="center">{row.lCode}</StyledTableCell>
                             <StyledTableCell align="center">{row.lengthOfStay}</StyledTableCell>
@@ -98,6 +97,7 @@ function MyTable() {
                                 <Button
                                     variant='text'
                                     color='primary'
+
                                 >
                                     <Edit />
                                 </Button>

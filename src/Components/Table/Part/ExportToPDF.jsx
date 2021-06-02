@@ -7,9 +7,6 @@ import jsPDF from 'jspdf'
 import autoTable from 'jspdf-autotable'
 
 const useStyles = makeStyles(() => ({
-    btn: {
-        marginLeft: 10
-    },
     icon: {
         marginRight: 10,
     },
@@ -35,6 +32,7 @@ function ExportToPDF() {
                 variant='contained'
                 className={`${classes.btn}`}
                 onClick={jsPDFGenerator}
+                fullWidth
             >
                 <PictureAsPdfIcon
                     className={`${classes.icon}`}
