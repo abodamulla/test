@@ -30,8 +30,8 @@ import ExportToPDF from './Part/ExportToPDF';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
 // Other Part
-import MyTable from './Part/Table'
-import rows from './Part/TableData';
+import MyTable from './Part/MyTable'
+import rows, { brandArray, cityArray, statusArray, typeOfJobArray } from './Part/TableData';
 
 var newRows = []
 
@@ -39,26 +39,12 @@ const useStyles = makeStyles((theme) => ({
     Page: {
         padding: 1,
     },
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        flexBasis: '33.33%',
-        flexShrink: 0,
-        cursor: 'default',
-    },
-    secondaryHeading: {
-        fontSize: theme.typography.pxToRem(15),
-        color: theme.palette.text.secondary,
-    },
     filterIcon: {
         transform: "rotate(180deg)",
     },
     formControl: {
         margin: theme.spacing(1),
         minWidth: 150,
-
-    },
-    filterBtn: {
-        marginBottom: 10,
     },
 
 }))
@@ -87,10 +73,6 @@ function Page() {
     };
 
 
-    const brandArray = []
-    const cityArray = []
-    const typeOfJobArray = []
-    const statusArray = []
 
     rows.forEach(newRow => {
 
@@ -105,32 +87,18 @@ function Page() {
 
     })
 
-    rows.forEach(row => {
-        if (brandArray.indexOf(row.brand) === -1) {
-            brandArray.push(row.brand);
-        }
-        if (cityArray.indexOf(row.city) === -1) {
-            cityArray.push(row.city);
-        }
-        if (typeOfJobArray.indexOf(row.typeOfJob) === -1) {
-            typeOfJobArray.push(row.typeOfJob);
-        }
-        if (statusArray.indexOf(row.status) === -1) {
-            statusArray.push(row.status);
-        }
-    })
+
 
     return (
         <Grid container spacing={2} className={`${classes.Page}`}>
 
             {/* Accordion Section */}
-            <Grid container item lg={12} md={12} sm={12} xs={12}>
+            <Grid item lg={12} md={12} sm={12} xs={12}>
                 <Accordion expanded={true}>
                     <AccordionSummary
                         expandIcon={<FilterListIcon className={`${classes.filterIcon}`} />}
-                        id="panel1bh-header"
                     >
-                        <Typography className={classes.heading}>Filter</Typography>
+                        <Typography>Filter</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
 

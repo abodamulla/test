@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import {
@@ -9,15 +10,14 @@ import {
     TableHead,
     TableRow,
     Paper,
-    Button
+    // Button
 } from '@material-ui/core';
 
-import { 
-    ClearTwoTone,
-    LocalShipping,
-    Check,
+import {
     Edit,
 } from '@material-ui/icons'
+
+import { statusType } from './TableData';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -47,16 +47,6 @@ const useStyles = makeStyles({
 
 function MyTable(props) {
     const classes = useStyles()
-
-    const statusType = (type) => {
-        if(type === 'Declined - Book For NADD') {
-            return(<ClearTwoTone />)
-        }else if(type === 'New') {
-            return(<LocalShipping />)
-        }else if(type === 'Complated - Win') {
-            return(<Check />)
-        }
-    };
 
     return (
         <TableContainer component={Paper}>
@@ -94,13 +84,24 @@ function MyTable(props) {
                             <StyledTableCell align="center">{row.typeOfJob}</StyledTableCell>
                             <StyledTableCell align="center">{statusType(row.status)}</StyledTableCell>
                             <StyledTableCell align="center">
-                                <Button
+                                {/* <Button
                                     variant='text'
                                     color='primary'
-
+                                    onClick={() => {
+                                        localStorage.setItem("Row", JSON.stringify(row))
+                                        window.location = "/Edit"
+                                    }}
                                 >
                                     <Edit />
-                                </Button>
+                                </Button> */}
+                                <Link
+                                    to={{
+                                        pathname: "/Edit",
+                                        state: (row)
+                                    }}
+                                >
+                                    <Edit color='primary' />
+                                </Link>
                             </StyledTableCell>
                         </StyledTableRow>
                     ))}

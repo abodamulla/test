@@ -1,3 +1,9 @@
+import {
+    ClearTwoTone,
+    LocalShipping,
+    Check,
+} from '@material-ui/icons'
+
 const rows = [
     {
         id: 1,
@@ -8,7 +14,7 @@ const rows = [
         lastName: 'Mulla',
         phone: '0912123123',
         parqQuoteID: 'R-206263H',
-        desiredDeliveryDate: '2020-6-20',
+        desiredDeliveryDate: '2020-07-28',
         brand: 'PUPS',
         city: 'Calagary',
         typeOfJob: 'Long Distance',
@@ -19,11 +25,11 @@ const rows = [
         eventTime: '2018-02-04 18:32:46',
         lCode: 'L170',
         lengthOfStay: 2,
-        firstName: 'Karem',
-        lastName: 'Mulla',
+        firstName: 'Ali',
+        lastName: 'Jaber',
         phone: '0912123123',
         parqQuoteID: 'R-206263H',
-        desiredDeliveryDate: '2021-6-20',
+        desiredDeliveryDate: '2020-02-20',
         brand: 'Cubeit',
         city: 'London',
         typeOfJob: 'Long Distance',
@@ -31,14 +37,14 @@ const rows = [
     },
     {
         id: 3,
-        eventTime: '2021-05-24 18:32:46',
+        eventTime: '2015-05-24 18:32:46',
         lCode: 'L150',
         lengthOfStay: 3,
-        firstName: 'Karem',
-        lastName: 'Mulla',
+        firstName: 'Taha',
+        lastName: 'Kassar',
         phone: '0912123123',
         parqQuoteID: 'R-206263H',
-        desiredDeliveryDate: '2021-6-20',
+        desiredDeliveryDate: '2020-02-24',
         brand: 'Cubeit',
         city: 'Brampton',
         typeOfJob: 'Move_Store',
@@ -47,13 +53,13 @@ const rows = [
     {
         id: 4,
         eventTime: '2021-05-24 18:32:46',
-        lCode: 'L150',
+        lCode: 'L130',
         lengthOfStay: 4,
-        firstName: 'Karem',
-        lastName: 'Mulla',
+        firstName: 'Ahmad',
+        lastName: 'AlSaleh',
         phone: '0912123123',
         parqQuoteID: 'R-206263H',
-        desiredDeliveryDate: '2021-6-20',
+        desiredDeliveryDate: '2021-06-20',
         brand: 'PUPS',
         city: 'London',
         typeOfJob: 'Move',
@@ -62,13 +68,13 @@ const rows = [
     {
         id: 5,
         eventTime: '2013-09-28 18:32:46',
-        lCode: 'L150',
+        lCode: 'L190',
         lengthOfStay: 5,
-        firstName: 'Karem',
+        firstName: 'AbdAlkarem',
         lastName: 'Mulla',
         phone: '0912123123',
         parqQuoteID: 'R-206263H',
-        desiredDeliveryDate: '2021-6-20',
+        desiredDeliveryDate: '2017-09-22',
         brand: 'PUPS',
         city: 'Brampton',
         typeOfJob: 'Move',
@@ -77,13 +83,13 @@ const rows = [
     {
         id: 6,
         eventTime: '2019-03-24 18:32:46',
-        lCode: 'L150',
+        lCode: 'L120',
         lengthOfStay: 6,
-        firstName: 'Karem',
+        firstName: 'Abd',
         lastName: 'Mulla',
         phone: '0912123123',
         parqQuoteID: 'R-206263H',
-        desiredDeliveryDate: '2021-6-20',
+        desiredDeliveryDate: '2019-08-19',
         brand: 'Cubeit',
         city: 'AB',
         typeOfJob: 'Onsite Storage',
@@ -106,5 +112,35 @@ export const headers = [
     {label: 'Type Of Job',           key: 'typeOfJob'},
     {label: 'Status',                key: 'status'},
 ]
+
+export const brandArray = []
+export const cityArray = []
+export const typeOfJobArray = []
+export const statusArray = []
+
+rows.forEach(row => {
+    if (brandArray.indexOf(row.brand) === -1) {
+        brandArray.push(row.brand);
+    }
+    if (cityArray.indexOf(row.city) === -1) {
+        cityArray.push(row.city);
+    }
+    if (typeOfJobArray.indexOf(row.typeOfJob) === -1) {
+        typeOfJobArray.push(row.typeOfJob);
+    }
+    if (statusArray.indexOf(row.status) === -1) {
+        statusArray.push(row.status);
+    }
+})
+
+export const statusType = (type) => {
+    if (type === 'Declined - Book For NADD') {
+        return (<ClearTwoTone />)
+    } else if (type === 'New') {
+        return (<LocalShipping />)
+    } else if (type === 'Complated - Win') {
+        return (<Check />)
+    }
+};
 
 export default rows

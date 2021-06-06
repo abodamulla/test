@@ -19,4 +19,8 @@ body {
     padding: 25px 100px;
   }
 }
+
+.app .client-info {
+  border-radius: 4px;
+}
 /*# sourceMappingURL=Style.css.map */
