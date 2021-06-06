@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
     Form: {
         marginTop: 10,
-        marginLeft: 10,
+        // marginLeft: 10,
     },
     typographyText: {
         color: theme.palette.grey[600],
@@ -37,11 +37,12 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.primary.light,
     },
     BTN: {
-        marginTop: theme.spacing(5),
+        marginTop: theme.spacing(2),
+        // marginLeft: theme.spacing(1)
     },
     formControl: {
         margin: theme.spacing(1),
-        minWidth: 200,
+        minWidth: 150,
     },
 
 }))
@@ -87,7 +88,7 @@ function Form(props) {
             {/* Form Start */}
             <Grid container spacing={1} className={`${classes.Form}`}>
                 {/* Radio Input Start */}
-                <Grid item lg={3} md={12} sm={12} xs={12}>
+                <Grid item lg={12} md={12} sm={12} xs={12}>
                     <FormControl className={classes.formControl} component="fieldset">
                         <FormLabel required component="legend">Preferred Language</FormLabel>
                         <RadioGroup required row name="language" value={data.language} onChange={handleChange}>
@@ -99,7 +100,7 @@ function Form(props) {
                 {/* Radio Input End */}
 
                 {/* Lead ID Start */}
-                <Grid item lg={3} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='Lead ID'
@@ -113,7 +114,7 @@ function Form(props) {
                 {/* Lead ID End */}
 
                 {/* City Start */}
-                <Grid item lg={3} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='City'
@@ -128,7 +129,7 @@ function Form(props) {
                 {/* City End */}
 
                 {/* Unit Size Start */}
-                <Grid item lg={3} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='Unit Size'
@@ -142,7 +143,7 @@ function Form(props) {
                 {/* Unit Size End */}
 
                 {/* Parq Quote ID Start */}
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='Parq Quote ID'
@@ -157,7 +158,7 @@ function Form(props) {
                 {/* Parq Quote ID End */}
 
                 {/* Inquiry Type Start */}
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='Inquiry Type'
@@ -171,7 +172,7 @@ function Form(props) {
                 {/* Inquiry Type End */}
 
                 {/* LCode Start */}
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='LCode'
@@ -186,7 +187,7 @@ function Form(props) {
                 {/* LCode End */}
 
                 {/* Brand Start */}
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='Brand'
@@ -201,7 +202,7 @@ function Form(props) {
                 {/* Brand End */}
 
                 {/* First Name Start */}
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='First Name'
@@ -216,7 +217,7 @@ function Form(props) {
                 {/* First Name End */}
 
                 {/* Last Name Start */}
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='Last Name'
@@ -231,7 +232,7 @@ function Form(props) {
                 {/* Last Name End */}
 
                 {/* Phone Number Start */}
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='Phone Number'
@@ -246,7 +247,7 @@ function Form(props) {
                 {/* Phone Number End */}
 
                 {/* Email Start */}
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='Email'
@@ -260,7 +261,7 @@ function Form(props) {
                 {/* Email End */}
 
                 {/* Type Of Job Start */}
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='Type Of Job'
@@ -275,7 +276,7 @@ function Form(props) {
                 {/* Type Of Job End */}
 
                 {/* Length Of Stay Start */}
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='Length Of Stay (Cycle)'
@@ -290,7 +291,7 @@ function Form(props) {
                 {/* Length Of Stay End */}
 
                 {/* Delivery Distance Start */}
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={4} sm={4} xs={6}>
                     <FormControl className={classes.formControl}>
                         <TextField
                             label='Delivery Distance (DE)'
@@ -403,8 +404,9 @@ function Form(props) {
             {/* Form End */}
 
             {/* BTN Start */}
-            <Grid className={`${classes.BTN}`} item lg={12} md={12} sm={12} xs={12}>
+            <Grid item lg={9} md={9} sm={12} xs={12}>
                 <Button
+                    className={classes.BTN}
                     variant='contained'
                     color='secondary'
                     onClick={updateChange}
@@ -413,8 +415,9 @@ function Form(props) {
                     UPDATE
                 </Button>
             </Grid>
-            <Grid item lg={12} md={12} sm={12} xs={12}>
+            <Grid item lg={3} md={3} sm={12} xs={12}>
                 <Button
+                    className={classes.BTN}
                     variant='contained'
                     color='secondary'
                     onClick={() => {
