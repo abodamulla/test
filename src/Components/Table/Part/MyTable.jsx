@@ -84,16 +84,6 @@ function MyTable(props) {
                             <StyledTableCell align="center">{row.typeOfJob}</StyledTableCell>
                             <StyledTableCell align="center">{statusType(row.status)}</StyledTableCell>
                             <StyledTableCell align="center">
-                                {/* <Button
-                                    variant='text'
-                                    color='primary'
-                                    onClick={() => {
-                                        localStorage.setItem("Row", JSON.stringify(row))
-                                        window.location = "/Edit"
-                                    }}
-                                >
-                                    <Edit />
-                                </Button> */}
                                 <Link
                                     to={{
                                         pathname: "/Edit",

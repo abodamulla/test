@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import {
     Grid,
@@ -39,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
     BTN: {
         marginTop: theme.spacing(2),
         // marginLeft: theme.spacing(1)
+    },
+    BTL: {
+        textDecoration: 'none',
+        color: 'white',
     },
     formControl: {
         margin: theme.spacing(1),
@@ -420,12 +425,14 @@ function Form(props) {
                     className={classes.BTN}
                     variant='contained'
                     color='secondary'
-                    onClick={() => {
-                        window.location = "/"
-                    }}
                     fullWidth
                 >
-                    BACK TO LIST
+                    <Link
+                        to='/'
+                        className={classes.BTL}
+                    >
+                        BACK TO LIST
+                    </Link>
                 </Button>
             </Grid>
             {/* BTN End */}

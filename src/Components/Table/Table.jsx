@@ -33,8 +33,6 @@ import FilterListIcon from '@material-ui/icons/FilterList';
 import MyTable from './Part/MyTable'
 import rows, { brandArray, cityArray, statusArray, typeOfJobArray } from './Part/TableData';
 
-var newRows = []
-
 const useStyles = makeStyles((theme) => ({
     Page: {
         padding: 1,
@@ -52,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Page() {
     const classes = useStyles()
+    var newRows = []
 
     const [filter, setFilter] = useState({
         EventDateFrom: '2010-01-01',
